@@ -1,0 +1,288 @@
+@media all and (min-width: 375px) and (max-width: 767px) {
+  
+  /* Header */
+  
+  .header-wrapper img{
+    width: 100%;
+    -moz-box-shadow: 0 0 26px 10px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 26px 10px rgba(0,0,0,0.4); 
+    box-shadow: 0 0 26px 10px rgba(0,0,0,0.4);
+  }
+  
+  .fixed {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #525D61;
+      z-index: 1;
+    }
+  
+  .img_desktop{
+    display: none;
+  }
+  
+  .fixed .staytop-inner{
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .invDiv{
+    margin-bottom: 135px;
+  }
+  
+  /* location box */
+  /*=================================*/
+  
+  .location-box{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 0px;
+    height: 100px;
+  }
+  
+  .find-location{
+    margin-top: 10px;
+    float:left;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    width: 100%;
+  }
+  
+  .btn {
+    -webkit-border-radius: 7;
+    -moz-border-radius: 7;
+    border-radius: 7px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: 0px;
+    background: #1C2D37;
+    color: #ffffff;	
+    width: 100%;
+  }
+  
+  .btn:focus{
+    outline: 0;
+  }
+  
+  .btn--secondary{
+    text-align: center;
+    background: #1C2D37;
+  }
+  
+  .btn--secondary:hover{
+    background: #CC6666;
+  }
+  
+  .currentLocation1{
+    float: left;
+    width: 52%;
+    text-align: left;
+  }
+  
+  .currentLocation2{
+    float: right;
+    width: 48%;
+    color: red;
+    text-align: right;
+    text-align: center;
+  }
+  
+  .links{
+    float: left;
+    width: 28%;
+  }
+  .midden{
+    width: 10%;
+    float: right;
+    text-align: center;
+    line-height: 255%;
+    font-size: 14px;
+  }
+  .rechts{
+    float: right;
+    width: 62%;
+  }
+  
+.landenLijst{
+    width: 100%;
+    font-size: 17px;
+    background: #1C2D37;
+    color: #fff;
+    height: 39px;
+    border: none;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+  }
+ 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+  
+  /* BODY */
+  /*================================*/
+  
+  .detail{
+    text-align: center;
+    height: 250px;
+    cursor: default;
+    padding-top: 40px;
+  }
+  
+  .circle{
+    border-radius: 50px;
+    border: 4px solid #CC6666;
+    height: 100px;
+    width: 100px;
+    line-height: 92px;  
+    margin: 0px auto;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+  }
+  
+  .clickable:hover, .circle:active{
+    background-color: #CC6666 !important; 
+    color: black !important;
+  }
+  
+  .subinfo{
+    height: 10px;
+    line-height: 25px;
+    font-style: oblique;
+    margin: 0px auto;
+    font-size: 11px;
+    font-family: 'Open Sans Light', sans-serif;
+    color: white;
+  }
+  
+  /* expandable divs 
+  ================================
+  */
+  
+  #temperature, #nearby, #share{
+    width: 90%;
+    height: 0vh;
+    overflow: hidden;
+    -moz-transition:all .3s linear;
+    -webkit-transition:all .3s linear;
+    -o-transition:all .3s linear;
+    transition:all .3s linear;
+    border-radius: 3vh;
+    margin: 0 auto;
+  }
+  
+  /* het weer 
+  ================================
+  */
+  
+  .temperature{
+    background-color: #1C2D37;
+    width: 100%;
+    height: 20vh;
+    padding-top: 2vh ;
+    padding-bottom: 2vh ;
+  }
+  
+  .week_container{
+    margin: 0 auto;
+    width: 100%;
+    height: 16vh;
+  }
+  
+  .weekdag{
+    width: 14.2857%;
+    float: left;
+    border-radius: 15px;
+    height: 16vh;
+  }
+  
+  .dag{
+    width: 100%;
+    text-align: center;
+    height: 5vh;
+    line-height: 5vh;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+  }
+  
+  .graden{
+    width: 100%;
+    text-align: center;
+    height: 4vh;
+    line-height: 4vh;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+  }
+  
+  .weericon{
+    width: 70%;
+    margin: 0 auto;
+    height: 7vh;
+  }
+  
+  #weericon{
+    height: auto; 
+    width: auto; 
+    max-width: 100%; 
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  
+  .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  
+  /* share 
+  ================================
+  */
+  
+  .share{
+    background-color: #1C2D37;
+    width: 100%;
+    height: 20vh ;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    text-align: center;
+  }
+  
+  .facebook{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 14vh;
+    margin: 0 auto;
+  }
+  
+  .twitter{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 14vh;
+    margin: 0 auto;
+  } 
+  
+  .googleplus{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 14vh;
+    margin: 0 auto;
+  }
+  
+  #shareicon{
+    height: auto; 
+    width: auto; 
+    max-width: 100%; 
+    max-height: 100%;
+    vertical-align: middle;
+  }
+}

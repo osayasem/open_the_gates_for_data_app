@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="nl-be" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<title>TripTip | Trip adviser for backpackers</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/vendor/normalize.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/grid.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/ipad.css">
+		<link rel="stylesheet" href="css/iphone6.css">
+		<link rel="stylesheet" href="css/iphone4.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<script src="js/vendor/modernizr-custom.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBksc-rWJpuf88ntod5gJtcbVMEseENySE"></script>	
+	</head>
+	<body>		
+		<div class="grid__wrapper header-wrapper">
+			<img alt="TripTip" src="images/banner4.jpg" class="img_desktop"/>
+			<img alt="TripTip" src="images/banner5.jpg" class="img_mobile"/>
+		</div>
+		<div class="grid__wrapper top">
+			<div class="grid__container" id="staytop">
+				<div class="grid__row">
+					<div class="grid__column-bp1-12">
+						<div class="location-box">
+							<button class="btn btn--primary">
+								<div class="currentLocation1">Your current location is :</div>
+								<div id="place" class="currentLocation2"></div>
+							</button>
+							<div class="find-location">
+								<div class="links"><button class="btn btn--secondary" id="btnmoreinfo" onclick="expand4()">More info &nbsp; </button></div> 
+								<div class="rechts">
+									<select id="landenLijst" class="landenLijst" onchange="updateContent();">
+										<option>-- Select a country --</option>
+									</select>
+								</div>	
+								<div class="midden">&nbsp; Or &nbsp;</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+			<div class="grid__dark">
+				<div class="grid__container">
+					<div class="grid__row">
+						<div id="landcode"></div>
+						<div class="grid__column-bp1-12 grid__column-bp2-4 detail">
+							<img src="icons/forest2.png" height="70px" width="70px" />
+							<div class="subinfo">% forest area</div>
+							<div class="circle" id="info_forest_procent">
+																
+							</div>
+						</div>
+						<div class="grid__column-bp1-12 grid__column-bp2-4 detail">
+							<img src="icons/jerrycan.png" height="70px" width="70px" />
+							<div class="subinfo">current diesel price</div>
+							<div class="circle" id="info_diesel">
+								
+							</div>
+						</div>
+						<div class="grid__column-bp1-12 grid__column-bp2-4 detail div1">
+							<img src="icons/temperature2.png" height="70px" width="70px" />
+							<div class="subinfo">This week's weather</div>
+							<div class="circle clickable" id="btn1" onclick="expand1()">
+								
+							</div>
+						</div>
+						<p id="demo"></p>		
+						<div id="temperature">
+							<div class="grid__row">
+								<div class="grid__column-bp1-12 temperature">
+									<div class="week_container">
+										<div class="weekdag" id="ma">
+											<div class="dag">
+											M	
+											</div>
+											<div class="graden" id="maandag">
+												
+											</div>
+											<div class="weericon" id="weericon1">
+												<span class="helper"></span><img src="icons/weericons/sunny.png" id="weericon" />
+											</div>							
+										</div>
+										<div class="weekdag" id="di">
+											<div class="dag">
+											T	
+											</div>
+											<div class="graden" id="dinsdag">
+												
+											</div>
+											<div class="weericon" id="weericon2">
+												<span class="helper"></span><img src="icons/weericons/sunny.png" id="weericon" />
+											</div>
+										</div>
+										<div class="weekdag" id="wo">
+											<div class="dag">
+											W	
+											</div>
+											<div class="graden" id="woensdag">
+												
+											</div>
+											<div class="weericon" id="weericon3">
+												<span class="helper"></span><img src="icons/weericons/cloudy.png" id="weericon" />
+											</div>
+										</div>
+										<div class="weekdag" id="do">
+											<div class="dag">
+											T	
+											</div>
+											<div class="graden" id="donderdag">
+												
+											</div>
+											<div class="weericon" id="weericon4">
+												<span class="helper"></span><img src="icons/weericons/rainy.png" id="weericon" />
+											</div>
+										</div>
+										<div class="weekdag" id="vr">
+											<div class="dag">
+											F	
+											</div>
+											<div class="graden" id="vrijdag">
+												
+											</div>
+											<div class="weericon" id="weericon5">
+												<span class="helper"></span><img src="icons/weericons/cloudy.png" id="weericon" />
+											</div>
+										</div>
+										<div class="weekdag" id="za">
+											<div class="dag">
+											S	
+											</div>
+											<div class="graden" id="zaterdag">
+												
+											</div>
+											<div class="weericon" id="weericon6">
+												<span class="helper"></span><img src="icons/weericons/rain.png" id="weericon" />
+											</div>
+										</div>
+										<div class="weekdag" id="zo">
+											<div class="dag">
+											S	
+											</div>
+											<div class="graden" id="zondag">
+												
+											</div>
+											<div class="weericon" id="weericon7">
+												<span class="helper"></span><img src="icons/weericons/rainy.png" id="weericon" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="moreinfo" id="moreinfo">				
+							<div class="grid__column-bp1-12 grid__column-bp2-4 detail">
+								<img src="icons/forest2.png" height="70px" width="70px" />
+								<div class="subinfo">km&#178 forest area</div>
+								<div class="circle" id="info_forest_km">
+									
+								</div>
+							</div>
+							<div class="grid__column-bp1-12 grid__column-bp2-4 detail">
+								<img src="icons/jerrycan.png" height="70px" width="70px" />
+								<div class="subinfo">current gasoline price</div>
+								<div class="circle" id="info_gasoline">
+									
+								</div>
+							</div>
+							<div class="grid__column-bp1-12 grid__column-bp2-4 detail div2">
+								<img src="icons/bed2.png" height="70px" width="70px" />
+								<div class="subinfo">Nearby sleeping facilities</div>
+								<div class="circle clickable" id="btn2" onclick="expand2()">
+									Nearby
+								</div>
+							</div>
+							<div id="nearby">
+									
+							</div>
+							<div class="grid__column-bp1-12 grid__column-bp2-4 detail">
+								<img src="icons/road2.png" height="70px" width="70px" />
+								<div class="subinfo">% paved roads</div>
+								<div class="circle" id="info_road">
+									57 %
+								</div>
+							</div>
+							<div class="grid__column-bp1-12 grid__column-bp2-4 detail">
+								<img src="icons/co22.png" height="70px" width="70px" />
+								<div class="subinfo">co&#8322; emission</div>
+								<div class="circle" id="info_co2">
+									
+								</div>
+							</div>
+							<div class="grid__column-bp1-12 grid__column-bp2-4 detail div3">
+								<img src="icons/share2.png" height="70px" width="70px" />
+								<div class="subinfo">Share!</div>
+								<div class="circle clickable" id="btn3" onclick="expand3()">
+									Share
+								</div>
+							</div>		
+							<div id="share">												
+								<div class="share">
+									<div class="grid__column-bp1-4 facebook">
+										<span class="helper"></span><a href="https://www.facebook.com/" target="blanc" alt="Share on Facebook"><img src="icons/shareicons/facebook.png" id="shareicon"/></a>
+									</div>																	<div class="grid__column-bp1-4 twitter">
+										<span class="helper"></span><a href="https://twitter.com/?lang=nl" target="blanc" alt="Share on Twitter"><img src="icons/shareicons/twitter.png"id="shareicon"/></a>
+									</div>
+									<div class="grid__column-bp1-4 googleplus">
+										<span class="helper"></span><a href="https://plus.google.com/" target="blanc" alt="Share on Google Plus"><img src="icons/shareicons/googleplus.png"id="shareicon"/></a>
+									</div>
+								</div>													
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>	
+	
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/utilities.js"></script>
+		<!--<script src="js/json.js"></script>-->
+		<script src="js/main2.js"></script>
+		
+	</body>
+</html>
